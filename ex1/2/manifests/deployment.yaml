@@ -1,0 +1,17 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dwk-crud-dep
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: dwk-crud
+  template:
+    metadata:
+      labels:
+        app: dwk-crud
+    spec:
+      containers:
+        - name: dwk-crud
+          image: janzu/dwk-1-2:latest
