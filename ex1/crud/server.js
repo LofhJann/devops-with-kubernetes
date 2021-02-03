@@ -5,3 +5,7 @@ const port = 3000
 app.listen(port, function() {
   console.log('Server started in port', port)
 })
+
+app.get('/', function (req, res) {
+  res.send("Hello World!")
+})
