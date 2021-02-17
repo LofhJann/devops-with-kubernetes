@@ -12,6 +12,9 @@ spec:
       labels:
         app: dwk-main
     spec:
+      volumes:
+        - name: dwk-main-storage
+          emptyDir: {}
       containers:
         - name: dwk-timestamp-creator
           image: janzu/dwk-timestamp-creator:latest
