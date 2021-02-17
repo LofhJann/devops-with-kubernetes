@@ -18,4 +18,9 @@ spec:
           volumeMounts:
             - name: dwk-main-storage
               mountPath: /usr/src/app/files
+        - name: dwk-timestamp-http
+          image: janzu/dwk-timestamp-http:latest
+          volumeMounts:
+            - name: dwk-main-storage
+              mountPath: /usr/src/app/files
 
