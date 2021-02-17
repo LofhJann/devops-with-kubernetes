@@ -9,7 +9,7 @@ const createString = () => {
 
 const writeToFile = () => {
   const ts = createString();
-  fs.writeFile('timestamp.txt', ts, function (err) {
+  fs.writeFile('files/timestamp.txt', ts, function (err) {
     if (err) return console.log(err)
     console.log(ts)
   })

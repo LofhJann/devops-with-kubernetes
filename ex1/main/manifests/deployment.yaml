@@ -13,5 +13,9 @@ spec:
         app: dwk-main
     spec:
       containers:
-        - name: dwk-main
-          image: janzu/dwk-main:latest
+        - name: dwk-timestamp-creator
+          image: janzu/dwk-timestamp-creator:latest
+          volumeMounts:
+            - name: dwk-main-storage
+              mountPath: /usr/src/app/files
+

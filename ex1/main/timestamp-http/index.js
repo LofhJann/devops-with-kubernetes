@@ -4,9 +4,9 @@ const fs = require('fs')
 
 const PORT = 3000
 
-const returnFileContents = () => {
+const returnFileContents = (path) => {
   try {
-    return fs.readFileSync('timestamp.txt').toString()
+    return fs.readFileSync(path).toString()
   } catch (e) {
     console.log(e)
   }
@@ -17,6 +17,6 @@ app.listen(PORT, function () {
 })
 
 app.get('/', function (req,res) {
-  res.write(returnFileContents())
+  res.write(returnFileContents('files/timestamp.txt'))
   res.end()
 })
