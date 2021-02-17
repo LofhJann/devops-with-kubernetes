@@ -12,6 +12,10 @@ spec:
       labels:
         app: dwk-pingpong
     spec:
+      volumes:
+        - name: dwk-pv
+          persistentVolumeClaim:
+            claimName: dwk-pingpong-claim
       containers:
         - name: dwk-pingpong
           image: janzu/dwk-pingpong:latest

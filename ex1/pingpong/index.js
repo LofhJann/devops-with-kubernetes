@@ -9,11 +9,21 @@ app.listen(port, function () {
 
 var requests = 0
 
+try {
+  requests = fs.readFileSync('files/pingpong.txt')
+} catch (e) {
+  console.log(e)
+}
+
 const pingpong = () => {
   return ++requests
 }
 
 app.get('/', function (req, res) {
-  fs.writeFile('files/pingpong.txt')
-  res.send("pong " + pingpong())
+  const pingpongs = pingpong()
+  fs.writeFile('files/pingpong.txt', "" + pingpongs, function (e) {
+    if (e) return console.log(e)
+    console.log('Write successful!')
+  })
+  res.send("pong " + pingpongs)
 })
