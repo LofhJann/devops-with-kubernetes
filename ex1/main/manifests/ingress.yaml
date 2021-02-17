@@ -1,7 +1,7 @@
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
-  name: randomstring-ingress
+  name: dwk-main-ingress
   annotations:
     traefik.ingress.kubernetes.io/rule-type: "PathPrefixStrip"
 spec:
@@ -10,7 +10,7 @@ spec:
         paths:
           - path: /
             backend:
-              serviceName: randomstring-svc
+              serviceName: dwk-main-svc
               servicePort: 2345
           - path: /pingpong
             backend:

@@ -1,17 +1,17 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: randomstring-dep
+  name: dwk-main-dep
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: randomstring
+      app: dwk-main
   template:
     metadata:
       labels:
-        app: randomstring
+        app: dwk-main
     spec:
       containers:
-        - name: randomstring
+        - name: dwk-main
           image: janzu/dwk-main:latest
