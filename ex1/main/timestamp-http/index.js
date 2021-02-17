@@ -19,7 +19,7 @@ app.listen(PORT, function () {
 app.get('/', function (req,res) {
   try {
     res.write(returnFileContents('files/timestamp.txt'))
-    res.write('\n')
+    res.write('\nPongs: ')
     res.write(returnFileContents('files/pingpong.txt'))
   } catch (e) {
     console.log(e)
