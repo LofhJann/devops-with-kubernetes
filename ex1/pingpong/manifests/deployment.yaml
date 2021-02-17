@@ -15,7 +15,10 @@ spec:
       volumes:
         - name: dwk-pv
           persistentVolumeClaim:
-            claimName: dwk-pingpong-claim
+            claimName: dwk-main-claim
       containers:
         - name: dwk-pingpong
           image: janzu/dwk-pingpong:latest
+          volumeMounts:
+            - name: dwk-pv
+              mountPath: /usr/src/app/files
