@@ -13,17 +13,18 @@ spec:
         app: dwk-main
     spec:
       volumes:
-        - name: dwk-main-storage
-          emptyDir: {}
+        - name: dwk-pv
+          persistentVolumeClaim:
+            claimName: dwk-main-claim
       containers:
         - name: dwk-timestamp-creator
           image: janzu/dwk-timestamp-creator:latest
           volumeMounts:
-            - name: dwk-main-storage
+            - name: dwk-pv
               mountPath: /usr/src/app/files
         - name: dwk-timestamp-http
           image: janzu/dwk-timestamp-http:latest
           volumeMounts:
-            - name: dwk-main-storage
+            - name: dwk-pv
               mountPath: /usr/src/app/files
 

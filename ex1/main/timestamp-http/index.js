@@ -17,6 +17,13 @@ app.listen(PORT, function () {
 })
 
 app.get('/', function (req,res) {
-  res.write(returnFileContents('files/timestamp.txt'))
-  res.end()
+  try {
+    res.write(returnFileContents('files/timestamp.txt'))
+    res.write('\n')
+    res.write(returnFileContents('files/pingpong.txt'))
+  } catch (e) {
+    console.log(e)
+  } finally {
+    res.end()
+  }
 })

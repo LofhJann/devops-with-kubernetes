@@ -12,7 +12,7 @@ spec:
             backend:
               serviceName: dwk-main-svc
               servicePort: 2345
-#          - path: /pingpong
-#            backend:
-#              serviceName: dwk-pingpong-svc
-#              servicePort: 2346
+          - path: /pingpong
+            backend:
+              serviceName: dwk-pingpong-svc
+              servicePort: 2346
