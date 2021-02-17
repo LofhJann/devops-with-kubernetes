@@ -1,19 +1,20 @@
-const uuid = require('uuid');
-const randomString = uuid.v4();
-const express = require('express')
+const uuid = require('uuid')
+const fs = require('fs')
+const randomString = uuid.v4()
 
-const app = express();
-const port = 3000
-
-const printString = () => {
+const createString = () => {
   const ts = new Date().toISOString()
-  return ts + ': ' + randomString;
+  return ts + ': ' + randomString
 }
 
-app.listen(port, function() {
-  console.log('Server started in port', port)
-})
+const writeToFile = () => {
+  const ts = createString();
+  fs.writeFile('timestamp.txt', ts, function (err) {
+    if (err) return console.log(err)
+    console.log(ts)
+  })
+}
 
-app.get('/', function (req, res) {
-  res.send(printString())
-})
+setInterval(() => {
+  writeToFile()
+}, 5000)
