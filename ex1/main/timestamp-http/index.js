@@ -40,7 +40,7 @@ app.get('/', function(req,res) {
   res.write(createString())
   axios.get('http://dwk-pingpong-svc:2346/')
     .then(function(axiosRes) {
-      res.write('\n'+axiosRes)
+      res.write('\n'+axiosRes.data)
     })
     .catch(function (err) {
       console.log(err)
