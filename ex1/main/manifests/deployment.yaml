@@ -12,8 +12,8 @@ spec:
       labels:
         app: dwk-main
       containers:
-        - name: dwk-timestamp-creator
-          image: janzu/dwk-timestamp-creator:latest
+#        - name: dwk-timestamp-creator
+#          image: janzu/dwk-timestamp-creator:latest
         - name: dwk-timestamp-http
           image: janzu/dwk-timestamp-http:latest
 
