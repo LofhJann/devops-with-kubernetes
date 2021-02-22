@@ -38,7 +38,7 @@ app.get('/', function(req,res) {
   res.write(createString())
   axios.get('/pingpong')
     .then(function(axiosRes) {
-      res.write(axiosRes)
+      res.write('\n'+axiosRes)
     })
     .catch(function (err) {
       console.log(err)
