@@ -15,3 +15,5 @@ spec:
       containers:
         - name: dwk-crud
           image: janzu/dwk-crud:latest
+        - name: dwk-crud-frontend
+          image: janzu/dwk-crud-frontend:latest
