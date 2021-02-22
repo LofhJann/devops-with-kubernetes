@@ -2,6 +2,7 @@ const express = require('express')
 const app = express()
 const fs = require('fs')
 const axios = require('axios')
+const uuid = require('uuid')
 
 const PORT = 3000
 
@@ -14,6 +15,7 @@ const PORT = 3000
 } */
 
 const createString = () => {
+  const randomString = uuid.v4()
   const ts = new Date().toISOString()
   return ts + ': ' + randomString
 }
