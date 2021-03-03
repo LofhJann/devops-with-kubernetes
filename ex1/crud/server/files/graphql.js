@@ -1,6 +1,6 @@
 const {gql} = require('apollo-server-express')
 
-const todos = [
+const todoList = [
   {
       title: 'Tee läksyt'
   },
@@ -14,7 +14,7 @@ const typeDefs = gql`
     title: String!
   }
   type Query {
-    getTodos: [Todo]
+    todos: [Todo]
   }
   type Mutation {
     addTodo(title: String): Todo
@@ -23,17 +23,17 @@ const typeDefs = gql`
 
 const resolvers = {
   Query: {
-    getTodos: () => todos
+    todos: () => todoList
   },
   Mutation: {
     addTodo: (_, args) => {
       const todo = { title: args.title }
-      todos.push(todo)
+      todoList.push(todo)
       return todo
     }
   }
 }
 
-exports.todos = todos
+exports.todos = todoList
 exports.resolvers = resolvers
 exports.typeDefs = typeDefs

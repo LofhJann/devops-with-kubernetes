@@ -14,5 +14,5 @@ app.get('/', function (req, res) {
   res.send("Hello World!")
 })
 
-const server = new ApolloServer({ typeDefs, resolvers });
+const server = new ApolloServer({cors:true, typeDefs, resolvers });
 server.applyMiddleware({ app });
